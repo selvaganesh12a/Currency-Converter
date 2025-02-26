@@ -1,0 +1,30 @@
+<div class="converter-container">
+  <h1>💱 Currency Converter</h1>
+
+  <div class="input-group">
+    <input type="number" [(ngModel)]="amount" placeholder="Enter amount" class="input-field" />
+  </div>
+
+  <div class="dropdown-group">
+    <select [(ngModel)]="fromCurrency" class="dropdown">
+      <option *ngFor="let currency of currencies" [value]="currency">
+        {{ currency }}
+      </option>
+    </select>
+
+   <button (click)="swapCurrencies()" class="swap-btn">⇄</button>
+
+    <select [(ngModel)]="toCurrency" class="dropdown">
+      <option *ngFor="let currency of currencies" [value]="currency">
+        {{ currency }}
+      </option>
+    </select>
+  </div>
+
+  <button  (click)="convertCurrency()" class="convert-btn">Convert</button>
+
+  <p class="result-text">Converted Amount: <span class="converted-value">{{ convertedAmount | number:'1.2-2' }}</span></p>
+</div>
+<div style="width: 50%; margin: auto;">
+    <canvas id="exchangeRateChart"></canvas>
+</div>

@@ -1,0 +1,110 @@
+/* Background Image */
+body {
+  background: url('https://source.unsplash.com/1600x900/?money,finance') no-repeat center center/cover;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  height: 100vh;            /* Full screen height */
+  margin: 0;                /* Remove default margin */
+}
+
+/* Main Container */
+.converter-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 400px;
+  max-width: 90%; /* Make it responsive */
+}
+
+/* Title */
+h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input Field */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Dropdowns */
+.dropdown-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.dropdown {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  text-align: center;
+  background: white;
+}
+
+.swap-icon {
+  font-size: 20px;
+  margin: 0 10px;
+  color: #007bff;
+}
+
+/* Convert Button */
+.convert-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  color: white;
+  background: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.convert-btn:hover {
+  background: #0056b3;
+}
+
+/* Result Display */
+.result-text {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #333;
+}
+
+.converted-value {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.swap-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.swap-btn:hover {
+  background: #0056b3;
+}
