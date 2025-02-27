@@ -42,9 +42,12 @@ export class CurrencyConverterComponent implements OnInit {
   fetchExchangeRates(): void {
     const url = 'https://api.exchangerate-api.com/v4/latest/USD';
     this.http.get<any>(url).subscribe(response =>{
-      const labels = Object.keys(response.rates).slice(0, 10);
-      const data = Object.values(response.rates).slice(0, 10).map(value => Number(value));
+      const rates = response.rates;
+      if(rates[this.fromCurrency] && rates[this.toCurrency]) {
+      const labels = ['Base'];
+      const data = [rates[this.fromCurrency],rates[this.toCurrency]];
       this.updateChart(labels, data);
+      }
     });
   }
   updateChart(labels: string[], data: number[]) {
@@ -63,17 +66,26 @@ export class CurrencyConverterComponent implements OnInit {
           labels: labels,
           datasets: [
             {
-              label: 'Exchange Rate',
-              data: data,
+              label: this.fromCurrency,
+              data: [data[0]],
               borderColor: 'blue',
               borderWidth: 2,
             },
+            {
+              label: this.toCurrency,
+              data: [data[1]],
+              borderColor: 'green',
+              borderWidth: 2,
+            }
           ],
         },
       });
     }
   }
   
+  onCurrencyChange(): void{
+    this.fetchExchangeRates();
+  }
 
   convertCurrency() {
     const rate =

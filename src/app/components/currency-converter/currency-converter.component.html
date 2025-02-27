@@ -6,7 +6,7 @@
   </div>
 
   <div class="dropdown-group">
-    <select [(ngModel)]="fromCurrency" class="dropdown">
+    <select [(ngModel)]="fromCurrency" (change)="onCurrencyChange()">
       <option *ngFor="let currency of currencies" [value]="currency">
         {{ currency }}
       </option>
@@ -14,7 +14,7 @@
 
    <button (click)="swapCurrencies()" class="swap-btn">⇄</button>
 
-    <select [(ngModel)]="toCurrency" class="dropdown">
+    <select [(ngModel)]="toCurrency" (change)="onCurrencyChange()">
       <option *ngFor="let currency of currencies" [value]="currency">
         {{ currency }}
       </option>
